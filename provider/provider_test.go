@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/NX211/traefik-proxmox-provider/internal"
+	"github.com/DaemonCores/traefik-proxmox-provider/internal"
 )
 
 func TestProviderConfig(t *testing.T) {
@@ -330,11 +330,11 @@ func TestGetServiceURL(t *testing.T) {
 
 func TestHandleRouterTLS_ArrayDomains(t *testing.T) {
 	tests := []struct {
-		name           string
-		config         map[string]string
-		expectedMain   []string
-		expectedSANs   [][]string
-		expectNil      bool
+		name         string
+		config       map[string]string
+		expectedMain []string
+		expectedSANs [][]string
+		expectNil    bool
 	}{
 		{
 			name: "Array syntax with main and sans",

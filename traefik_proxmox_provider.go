@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/NX211/traefik-proxmox-provider/provider"
+	"github.com/DaemonCores/traefik-proxmox-provider/provider"
 )
 
 // Config the plugin configuration.
@@ -70,4 +70,4 @@ func (p *Provider) Provide(cfgChan chan<- json.Marshaler) error {
 // Stop the provider.
 func (p *Provider) Stop() error {
 	return p.provider.Stop()
-} 
+}

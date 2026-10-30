@@ -12,9 +12,9 @@ test:
 
 yaegi_test:
 	rm -rf ./tmp
-	mkdir -p ./tmp/src/github.com/NX211/traefik-proxmox-provider
-	cp -r ./internal ./provider ./vendor ./*.go ./.traefik.yml ./go.mod ./go.sum ./tmp/src/github.com/NX211/traefik-proxmox-provider/
-	GOPATH=$(shell pwd)/tmp yaegi test github.com/NX211/traefik-proxmox-provider
+	mkdir -p ./tmp/src/github.com/DaemonCores/traefik-proxmox-provider
+	cp -r ./internal ./provider ./vendor ./*.go ./.traefik.yml ./go.mod ./go.sum ./tmp/src/github.com/DaemonCores/traefik-proxmox-provider/
+	GOPATH=$(shell pwd)/tmp yaegi test github.com/DaemonCores/traefik-proxmox-provider
 	rm -rf ./tmp
 
 vendor:

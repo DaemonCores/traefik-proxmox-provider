@@ -22,7 +22,7 @@ A Traefik provider that automatically configures routing based on Proxmox VE vir
 experimental:
   plugins:
     traefik-proxmox-provider:
-      moduleName: github.com/NX211/traefik-proxmox-provider
+      moduleName: github.com/DaemonCores/traefik-proxmox-provider
       version: v0.7.0
 ```
 
