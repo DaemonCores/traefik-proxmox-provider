@@ -4,64 +4,60 @@
   <img src="https://raw.githubusercontent.com/DaemonCores/.github/refs/heads/main/assets/banner.svg" alt="DaemonCores Banner" width="100%"/>
 </p>
 
-<p align="center">
-  <a href="https://github.com/orgs/DaemonCores/teams"><img src="https://img.shields.io/badge/Community-000000?style=for-the-badge&logoColor=white" alt="Community"/></a>
-  <img src="https://img.shields.io/badge/Upstream-NX211_v0.8.1-A81D33?style=for-the-badge" alt="Upstream base"/>
+<p>
+  <strong align="left">Simplify and Innovate for Everyone.</strong>
+  <a href="https://github.com/DaemonCores/traefik-proxmox-provider/wiki"><img align="right" src="https://img.shields.io/badge/Wiki-FFFFFF?style=for-the-badge&logoColor=white" alt="Documentation"/></a>
+  <a href="https://github.com/orgs/DaemonCores/discussions"><img align="right" src="https://img.shields.io/badge/Community-000000?style=for-the-badge&logoColor=white" alt="Community"/></a>
+  <a href="https://github.com/DaemonCores/traefik-proxmox-provider"><img align="right" src="https://img.shields.io/badge/Traefik_Proxmox_Provider-A81D33?style=for-the-badge&logo=traefikproxy&logoColor=white" alt="Traefik Proxmox Provider"/></a>
+  
+  <em>Identify gaps and fill them, make improvements where possible, but above all, empower developers to offer more to users.</em>
 </p>
 
-A Traefik provider plugin that automatically configures routing based on Proxmox VE
-virtual machines and containers — maintained by DaemonCores since 2026-11-04.
+---
 
-## Why DaemonCores maintains this fork
+A Traefik provider that automatically configures routing based on Proxmox VE virtual machines and containers — discovered from each VM/container's notes field, no files to mount, no sidecar to run.
 
-Upstream (NX211) stays active and we credit their work: the whole provider below v0.8.1
-is theirs, under Apache-2.0. We took over maintenance for one precise reason: the
-middleware-in-labels capability (upstream issue #39, PR #41) has been parked there
-since February 2026, and DaemonCores production runs on the PVE traefik-provider
-plugin — we could not keep waiting on that review calendar.
+- Automatically discovers Proxmox VE virtual machines and containers
+- Configures routing based on VM/container metadata
+- Middleware definitions travel with the instance (`parseMiddlewares` — DaemonCores addition)
+- HTTP and HTTPS endpoints, configurable polling interval, SSL validation options, full Traefik routing/middleware/TLS support
 
-So this repository is now the maintained fork: bug fixes and features needed by
-DaemonCores land here first. Anything broadly useful may be proposed back upstream,
-but our release cadence no longer depends on it.
+## Maintained by DaemonCores
 
-## What we changed (on top of upstream v0.8.1)
+Upstream ([NX211/traefik-proxmox-provider](https://github.com/NX211/traefik-proxmox-provider), v0.8.1 at takeover) stays credited: everything below v0.8.1 is their work under Apache-2.0 (full history preserved). Upstream's middleware-in-labels proposal (PR #41) has been parked since February 2026; DaemonCores production runs this plugin on its PVE edge, so the line is maintained here since 2026-11-04. Bug fixes and features needed by DaemonCores land in this repository first; useful patches may be proposed upstream without our releases depending on it.
 
-- **`parseMiddlewares` — middleware definitions parsed from CT/VM labels**
-  (`traefik.http.middlewares.*` entries in instance metadata are merged into the
-  dynamic configuration), which upstream's provider ignores.
+The deltas on top of upstream v0.8.1:
+
+- **`parseMiddlewares`** — `traefik.http.middlewares.*` definitions found in instance labels are merged into the dynamic configuration (upstream only parses routers/services/TLS).
 - Case-insensitive label handling and TLS domains array syntax.
-- Yaegi test target fix (hidden files + tmp directory handling).
-- Dev container configuration, troubleshooting documentation.
+- Yaegi test target fix (hidden files and tmp directory handling), dev container, troubleshooting docs.
 
-## Installation
+## Documentation
 
-```yaml
-experimental:
-  plugins:
-    traefik-proxmox-provider:
-      moduleName: github.com/DaemonCores/traefik-proxmox-provider
-      version: v0.9.0
-```
+The full documentation lives in the [wiki](https://github.com/DaemonCores/traefik-proxmox-provider/wiki):
 
-(Upstream installs pointed at `github.com/NX211/traefik-proxmox-provider` — switch
-the `moduleName` to this repository for the maintained line.)
+- [Installation](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/Installation)
+- [Configuration](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/Configuration)
+- [Proxmox API token setup](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/PVE-API-Tokens)
+- [VM/Container labeling](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/VM-Container-Labeling)
+- [Examples](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/Examples)
+- [How it works](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/How-It-Works)
+- [Troubleshooting](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/Troubleshooting)
+- [DaemonCores takeover](https://github.com/DaemonCores/traefik-proxmox-provider/wiki/DaemonCores-Takeover)
 
-## Configuration, usage, features
+## Contributing
 
-Unchanged from upstream v0.8.1 — see the original README sections kept below and
-the upstream documentation. DaemonCores production notes:
-
-- The PVE-side labels the provider reads are written as `traefik.*=value` lines in
-  the guest `description` field, one per line, first line `traefik.enable=true`.
-- A router referencing an unparsed middleware used to invalidate the whole payload;
-  with `parseMiddlewares` the definitions travel with the guest that needs them.
+Contributions welcome — issues and pull requests in this repository.
 
 ## License
 
-Apache-2.0 — inherited from upstream. DaemonCores contributions are published under
-the same license. Full upstream history and authorship is preserved in git history on purpose.
+Apache-2.0 — see the [LICENSE](LICENSE) file (inherited from upstream; DaemonCores contributions under the same license).
 
-## Maintenance
+---
 
-Maintained by [DaemonCores](https://github.com/DaemonCores) — issues and PRs go here.
-Upstream (NX211) remains the origin project; thanks to all its contributors.
+<p>
+  <strong align="left">Made with ⭐ by the DaemonCores community</strong>
+  <a href="https://github.com/DaemonCores/traefik-proxmox-provider/wiki"><img align="right" src="https://img.shields.io/badge/Wiki-FFFFFF?style=for-the-badge&logoColor=white" alt="Documentation"/></a>
+  <a href="https://github.com/orgs/DaemonCores/discussions"><img align="right" src="https://img.shields.io/badge/Community-000000?style=for-the-badge&logoColor=white" alt="Community"/></a>
+  <a href="https://github.com/DaemonCores/traefik-proxmox-provider"><img align="right" src="https://img.shields.io/badge/Traefik_Proxmox_Provider-A81D33?style=for-the-badge&logo=traefikproxy&logoColor=white" alt="Traefik Proxmox Provider"/></a>
+</p>
