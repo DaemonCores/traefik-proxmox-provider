@@ -8,7 +8,7 @@
   <strong align="left">Simplify and Innovate for Everyone.</strong>
   <a href="https://github.com/DaemonCores/traefik-proxmox-provider/wiki"><img align="right" src="https://img.shields.io/badge/Wiki-FFFFFF?style=for-the-badge&logoColor=white" alt="Documentation"/></a>
   <a href="https://github.com/orgs/DaemonCores/discussions"><img align="right" src="https://img.shields.io/badge/Community-000000?style=for-the-badge&logoColor=white" alt="Community"/></a>
-  <a href="https://github.com/DaemonCores/traefik-proxmox-provider"><img align="right" src="https://img.shields.io/badge/Traefik_Proxmox_Provider-A81D33?style=for-the-badge&logo=traefikproxy&logoColor=white" alt="Traefik Proxmox Provider"/></a>
+  <a href="https://github.com/DaemonCores/debian-bootc"><img align="right" src="https://img.shields.io/badge/Base_debian_for_all_project-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian Bootc"/></a>
   
   <em>Identify gaps and fill them, make improvements where possible, but above all, empower developers to offer more to users.</em>
 </p>
@@ -59,5 +59,5 @@ Apache-2.0 — see the [LICENSE](LICENSE) file (inherited from upstream; DaemonC
   <strong align="left">Made with ⭐ by the DaemonCores community</strong>
   <a href="https://github.com/DaemonCores/traefik-proxmox-provider/wiki"><img align="right" src="https://img.shields.io/badge/Wiki-FFFFFF?style=for-the-badge&logoColor=white" alt="Documentation"/></a>
   <a href="https://github.com/orgs/DaemonCores/discussions"><img align="right" src="https://img.shields.io/badge/Community-000000?style=for-the-badge&logoColor=white" alt="Community"/></a>
-  <a href="https://github.com/DaemonCores/traefik-proxmox-provider"><img align="right" src="https://img.shields.io/badge/Traefik_Proxmox_Provider-A81D33?style=for-the-badge&logo=traefikproxy&logoColor=white" alt="Traefik Proxmox Provider"/></a>
+  <a href="https://github.com/DaemonCores/debian-bootc"><img align="right" src="https://img.shields.io/badge/Base_debian_for_all_project-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian Bootc"/></a>
 </p>
